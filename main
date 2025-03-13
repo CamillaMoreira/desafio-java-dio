@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        CadastroUsuarios cadastro = new CadastroUsuarios();
+
+        System.out.println("Cadastro de Usuários");
+        
+        // Criando usuário
+        System.out.print("Digite o nome: ");
+        String nome = scanner.nextLine();
+        
+        System.out.print("Digite o email: ");
+        String email = scanner.nextLine();
+        
+        System.out.print("Digite a senha: ");
+        String senha = scanner.nextLine();
+        
+        Usuario usuario = new Usuario(nome, email, senha);
+        
+        // Cadastrando o usuário
+        cadastro.cadastrarUsuario(usuario);
+
+        // Listando os usuários cadastrados
+        System.out.println("\nUsuários cadastrados:");
+        cadastro.listarUsuarios();
+        
+        scanner.close();
+    }
+}
